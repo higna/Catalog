@@ -1,0 +1,13 @@
+scripts:
+  shell:
+  - python manage.py shell
+  server: 
+  - python manage.py runserver 8000
+  startapp:
+  - python manage.py startapp
+  migrate:
+  - python manage.py migrate
+  makemigrations:
+  - python manage.py makemigrations
+  superuser:
+  - python manage.py createsuperuser
