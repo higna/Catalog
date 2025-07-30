@@ -28,6 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Frameworks
     'rest_framework',
+    # Knox
+    'knox',
+    # CORS
     'corsheaders',
     # Third party apps
     'users',
@@ -42,16 +45,21 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # Frameworks
+    # CORS
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    'https://localhost:3000',
+    'http://localhost:3000',
+    'http://172.27.80.208:3000',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
+
+AUTHENTICATION_BACKENDS = [
+    'users.auth_backend.EmailAuthBackend'
+]
 
 ROOT_URLCONF = 'main.urls'
 
@@ -72,6 +80,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'main.wsgi.application'
 
+# Knox
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': ('knox.auth.TokenAuthentication',),
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
