@@ -4,5 +4,5 @@ from rest_framework.routers import DefaultRouter
 from .views import *
 
 router = DefaultRouter()
-router.register('signup', RegisterViewSet, basename='signup')
+router.register('register', RegisterViewSet, basename='register')
 urlpatterns = router.urls

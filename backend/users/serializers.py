@@ -8,9 +8,9 @@ User = get_user_model()
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        feilds = ("id", "email", "password")
+        fields = ["id", "email", "password"]
         extra_kwargs = {"password": {"write_only": True}}
 
-        def create(self, validated_date):
-            user = User.objects.create_user(**validated_date)
-            return user
+    def create(self, validated_date):
+        user = User.objects.create_user(**validated_date)
+        return user

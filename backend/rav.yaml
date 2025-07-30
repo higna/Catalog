@@ -11,3 +11,5 @@ scripts:
   - python manage.py makemigrations
   superuser:
   - python manage.py createsuperuser
+  flush:
+  - python manage.py flush
