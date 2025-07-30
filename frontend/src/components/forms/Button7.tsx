@@ -3,11 +3,12 @@ import Button from '@mui/material/Button';
 
 type labelProps = {
     label: string;
+    type?: "button" | "submit" | "reset";
 };
 
-export default function Button7({ label }: labelProps) {
+export default function Button7({ label,type }: labelProps) {
     return (
-        <Button variant="contained" className={"myButton"}>
+        <Button type={type} variant="contained" className={"myButton"}>
             {label}
         </Button>
     );

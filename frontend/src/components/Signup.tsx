@@ -30,27 +30,28 @@ export default function Signup() {
                     </Box>
                     <Box className={"itemBox"}>
                         <TextField7
-                            name={"Email"}
+                            name={"email"}
                             control={control}
                             label={"Email"}
                         />
                     </Box>
                     <Box className={"itemBox"}>
                         <PassField7
-                            label={"Password"}
+                            label={"password"}
                             name={"Password"}
                             control={control}
                         />
                     </Box>
                     <Box className={"itemBox"}>
                         <PassField7
-                            label={"Confirm Password"}
+                            label={"confirmPassword"}
                             name={"Confirm Password"}
                             control={control}
                         />
                     </Box>
                     <Box className={"itemBox"}>
                         <Button7
+                            type={"submit"}
                             label={"Signup"} />
                     </Box>
                     <Box className={"itemBox"}>
