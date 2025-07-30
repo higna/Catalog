@@ -32,7 +32,7 @@ export default function Navbar({ children }: NavbarProps) {
             <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
                 <Toolbar>
                     <Typography variant="h6" noWrap component="div">
-                        Clipped drawer
+                        Higna's Catalog
                     </Typography>
                 </Toolbar>
             </AppBar>

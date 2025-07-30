@@ -1,0 +1,41 @@
+.myBackground {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background: #2A7B9B;
+  background: linear-gradient(90deg, rgba(42, 123, 155, 0.6) 0%, rgba(87, 199, 133, 0.75) 50%);
+}
+.whiteBox {
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: 0;
+  min-width: 300px;
+  height: 50%;
+  width: 25%;
+  border: 1px solid #333;
+  contain: content;
+}
+
+.itemBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: gray;
+  height: 100px;
+}
+
+.loginTitle{
+  font-size: 30px;
+  color: black;
+}
+
+.myForm{
+  width: 80%;
+  margin: 10px;
+}
