@@ -24,13 +24,19 @@ export default function Login() {
                 </Box>
                 <Box className={"itemBox"}>
                     <Button7
-                    label = {"Submit"}/>
+                        label={"Login"} />
                 </Box>
                 <Box className={"itemBox"}>
-                    <Box component={Link} to="/signup">
+                    <Box className={"itemBox"}>
+                        <Link to={"/"}>Forgot Password</Link> 
+                    </Box>
+                    <Box className={"itemBox"}>
+                        <Link to={"/signup"}>
+                            Link to Signup
+                        </Link>
                     </Box>
                 </Box>
             </Box>
-        </div>
+        </div >
     )
 }

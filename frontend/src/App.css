@@ -8,6 +8,7 @@
   background: #2A7B9B;
   background: linear-gradient(90deg, rgba(42, 123, 155, 0.6) 0%, rgba(87, 199, 133, 0.75) 50%);
 }
+
 .whiteBox {
   background-color: white;
   justify-content: center;
@@ -18,24 +19,27 @@
   height: 50%;
   width: 25%;
   border: 1px solid #333;
-  contain: content;
 }
 
-.itemBox{
+.itemBox {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: gray;
-  height: 100px;
+  height: 80px;
+  background-color: whitesmoke;
 }
 
-.loginTitle{
-  font-size: 30px;
+.loginTitle {
+  font-size: 35px;
   color: black;
 }
 
-.myForm{
+.myForm,
+.myButton {
   width: 80%;
-  margin: 10px;
+}
+
+.myButton{
+  background: teal !important;
 }

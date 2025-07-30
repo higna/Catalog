@@ -7,6 +7,8 @@ type labelProps = {
 
 export default function Button7({ label }: labelProps) {
     return (
-        <Button variant="contained">{label}</Button>
+        <Button variant="contained" className={"myButton"}>
+            {label}
+        </Button>
     );
 }
