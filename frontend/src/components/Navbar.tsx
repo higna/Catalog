@@ -13,6 +13,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InfoIcon from '@mui/icons-material/Info';
 import LoginIcon from '@mui/icons-material/Login';
+import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import { Link, useLocation } from 'react-router-dom'
 import { Divider } from '@mui/material';
@@ -67,18 +69,28 @@ export default function Navbar({ children }: NavbarProps) {
                         </ListItem>
                     </List>
                     <List>
-                        <ListItem key={2} disablePadding>
-                            <ListItemButton component={Link} to="/about" selected={"/about" === path}>
+                        <ListItem key={3} disablePadding>
+                            <ListItemButton component={Link} to="/contact" selected={"/contact" === path}>
                                 <ListItemIcon>
-                                    <InfoIcon />
+                                    <ContactPageIcon />
                                 </ListItemIcon>
-                                <ListItemText primary={"History"} />
+                                <ListItemText primary={"Contact"} />
+                            </ListItemButton>
+                        </ListItem>
+                    </List>
+                    <List>
+                        <ListItem key={4} disablePadding>
+                            <ListItemButton component={Link} to="/map" selected={"/map" === path}>
+                                <ListItemIcon>
+                                    <AddLocationAltIcon />
+                                </ListItemIcon>
+                                <ListItemText primary={"Map"} />
                             </ListItemButton>
                         </ListItem>
                     </List>
                     <Divider/>
                     <List>
-                        <ListItem key={3} disablePadding>
+                        <ListItem key={5} disablePadding>
                             <ListItemButton component={Link} to="/login" selected={"/login" === path}>
                                 <ListItemIcon>
                                     <LoginIcon />
@@ -88,7 +100,7 @@ export default function Navbar({ children }: NavbarProps) {
                         </ListItem>
                     </List>
                     <List>
-                        <ListItem key={4} disablePadding>
+                        <ListItem key={6} disablePadding>
                             <ListItemButton component={Link} to="/signup" selected={"/signup" === path}>
                                 <ListItemIcon>
                                     <HowToRegIcon />

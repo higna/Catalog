@@ -3,6 +3,8 @@ scripts:
   - python manage.py shell
   server: 
   - python manage.py runserver 8000
+  openserver:
+  - python manage.py runserver 0.0.0.0:8000
   startapp:
   - python manage.py startapp
   migrate:

@@ -2,10 +2,13 @@
 import './App.css'
 import Home from './components/Home'
 import About from './components/About'
+import Contact from './components/Contact'
+import Map from './components/Map'
 import Signup from './components/Signup'
 import Login from './components/Login'
 import Navbar from './components/Navbar'
 import { Routes, Route, useLocation } from 'react-router-dom'
+import ProtectedRoute from './components/ProtectedRoutes'
 
 export default function App() {
   const location = useLocation()
@@ -23,8 +26,12 @@ export default function App() {
 
           <Navbar>
             <Routes>
+              <Route element={<ProtectedRoute />}>
+                <Route path='/map' element={<Map />} />
+              </Route>
               <Route path='/home' element={<Home />} />
               <Route path='/about' element={<About />} />
+              <Route path='/contact' element={<Contact />} />
             </Routes>
           </Navbar>
       }

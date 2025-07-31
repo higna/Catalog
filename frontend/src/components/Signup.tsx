@@ -17,8 +17,12 @@ export default function Signup() {
             email: data.email,
             password: data.password,
         })
-            .then(() => {
+            .then((response) => {
+                console.log(response)
                 navigate(`/login`)
+            })
+            .catch((error) => {
+                console.error('Error during registration', error)
             })
     }
     return (
@@ -66,6 +70,11 @@ export default function Signup() {
                                 Link to Login
                             </Link>
                         </Box>
+                    </Box>
+                    <Box className={"itemBox"}>
+                        <Link to={"/home"}>
+                            Home
+                        </Link>
                     </Box>
                 </Box>
             </form>

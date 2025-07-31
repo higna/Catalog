@@ -16,8 +16,13 @@ export default function Login() {
             email: data.email,
             password: data.password,
         })
-            .then(() => {
+            .then((response) => {
+                console.log(response)
+                localStorage.setItem('Token', response.data.token)
                 navigate(`/home`)
+            })
+            .catch((error) => {
+                console.error('Error during login', error)
             })
     }
     return (
@@ -56,6 +61,11 @@ export default function Login() {
                                 Link to Signup
                             </Link>
                         </Box>
+                    </Box>
+                    <Box className={"itemBox"}>
+                        <Link to={"/home"}>
+                            Home
+                        </Link>
                     </Box>
                 </Box>
             </form>
