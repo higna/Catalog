@@ -66,6 +66,16 @@ export default function Navbar({ children }: NavbarProps) {
                             </ListItemButton>
                         </ListItem>
                     </List>
+                    <List>
+                        <ListItem key={2} disablePadding>
+                            <ListItemButton component={Link} to="/about" selected={"/about" === path}>
+                                <ListItemIcon>
+                                    <InfoIcon />
+                                </ListItemIcon>
+                                <ListItemText primary={"History"} />
+                            </ListItemButton>
+                        </ListItem>
+                    </List>
                     <Divider/>
                     <List>
                         <ListItem key={3} disablePadding>
