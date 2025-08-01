@@ -10,10 +10,11 @@ import Users from './components/Users'
 import Navbar from './components/Navbar'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoutes'
+import PasswordResetRequest from './components/PasswordResetRequest'
 
 export default function App() {
   const location = useLocation()
-  const noNavbar = location.pathname === "/signup" || location.pathname === "/login"
+  const noNavbar = location.pathname === "/signup" || location.pathname === "/login" || location.pathname === "/request/password_reset"
   return (
     <>
       {
@@ -21,6 +22,7 @@ export default function App() {
           <Routes>
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
+            <Route path='/request/password_reset' element={<PasswordResetRequest />} />
           </Routes>
 
           :

@@ -8,6 +8,7 @@ from django.urls import reverse
 from django.template.loader import render_to_string
 from django.core.mail import EmailMultiAlternatives
 from django.utils.html import strip_tags
+from django.conf import settings
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -60,7 +61,7 @@ def password_reset_token_created(reset_password_token, *args, **kwargs):
     message = EmailMultiAlternatives(
         subject= "Password Reset Request for {title}".format(title=reset_password_token.user.email),
         body= plain_message,
-        from_email="higboko@gmail.com",
+        from_email= settings.EMAIL_HOST_USER,
         to= [reset_password_token.user.email]
     )
     message.attach_alternative(html_message, "text/html")

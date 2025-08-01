@@ -1,11 +1,11 @@
+from dotenv import load_dotenv
 from pathlib import Path
 import datetime
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-ENV_PATH = os.path.join(BASE_DIR/".gitignore",".env")
-
+ENV_PATH = BASE_DIR / '.env'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -147,6 +147,6 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'Catalog App'
-EMAIL_HOST_USER = os.getenv("Catalog_Email")
-EMAIL_HOST_PASSWORD = os.getenv("Catalog_Password")
+EMAIL_HOST_USER = os.getenv('Catalog_Email')
+EMAIL_HOST_PASSWORD = os.getenv('Catalog_Password')
+DEFAULT_FROM_EMAIL = 'higboko@gmail.com'

@@ -82,19 +82,20 @@ export default function Signup() {
                     <Box className={"itemBox"}>
                         <Box className={"itemBox"}>
                             <Link to={"/"}>
-                                Forgot Password
+                                <Button7
+                                    type={"button"}
+                                    label={"Home"}
+                                />
                             </Link>
                         </Box>
                         <Box className={"itemBox"}>
                             <Link to={"/login"}>
-                                Link to Login
+                                <Button7
+                                    type={"button"}
+                                    label={"Login"}
+                                />
                             </Link>
                         </Box>
-                    </Box>
-                    <Box className={"itemBox"}>
-                        <Link to={"/home"}>
-                            Home
-                        </Link>
                     </Box>
                 </Box>
             </form>
