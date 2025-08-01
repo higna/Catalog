@@ -1,3 +1,4 @@
+import traceback
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.base_user import BaseUserManager
@@ -7,6 +8,9 @@ from django.urls import reverse
 from django.template.loader import render_to_string
 from django.core.mail import EmailMultiAlternatives
 from django.utils.html import strip_tags
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class CuistomUserManager(BaseUserManager):
@@ -49,3 +53,18 @@ def password_reset_token_created(reset_password_token, *args, **kwargs):
         'full_link': full_link,
         'email_address': reset_password_token.user.email
     }
+    
+    html_message = render_to_string("backend/email.html", context=context)
+    plain_message = strip_tags(html_message)
+    
+    message = EmailMultiAlternatives(
+        subject= "Password Reset Request for {title}".format(title=reset_password_token.user.email),
+        body= plain_message,
+        from_email="higboko@gmail.com",
+        to= [reset_password_token.user.email]
+    )
+    message.attach_alternative(html_message, "text/html")
+    try:
+        message.send(fail_silently=False)
+    except Exception as e:
+        print("EMAIL ERROR: \n", traceback.format_exc())

@@ -4,7 +4,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+ENV_PATH = os.path.join(BASE_DIR/".gitignore",".env")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -144,9 +144,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email Setting 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = 'mail.higna.com.ng'
-EMAIL_PORT = 993
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = "Catalog App"
-EMAIL_HOST_USER = os.environ.get("Catalog_Username")
-EMAIL_HOST_PASSWORD = os.environ.get("Catalog_Password")
+DEFAULT_FROM_EMAIL = 'Catalog App'
+EMAIL_HOST_USER = os.getenv("Catalog_Email")
+EMAIL_HOST_PASSWORD = os.getenv("Catalog_Password")
