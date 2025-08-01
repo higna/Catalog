@@ -26,6 +26,7 @@ django-ninja==1.4.0
 django-ninja-extra==0.22.9
 django-ninja-jwt==5.3.7
 django-rest-knox==5.0.2
+django-rest-passwordreset==1.5.0
 djangorestframework==3.16.0
 dnspython==2.7.0
 email_validator==2.2.0

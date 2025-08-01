@@ -14,6 +14,8 @@ export default function Signup() {
         console.log("Form submitted:", data);
 
         AxiosInstance.post(`register/`, {
+            first_name: data.first_name,
+            last_name: data.last_name,
             email: data.email,
             password: data.password,
         })
@@ -31,6 +33,24 @@ export default function Signup() {
                 <Box className={"whiteBox"}>
                     <Box className={"itemBox"}>
                         <Box className={"loginTitle"}> User Registration </Box>
+                    </Box>
+                    <Box>
+                        <Box className={"itemBox"}>
+                            <TextField7
+                                label={"First Name"}
+                                name={"first_name"}
+                                control={control}
+
+                            />
+                        </Box>
+                        <Box className={"itemBox"}>
+                            <TextField7
+                                label={"Last Name"}
+                                name={"last_name"}
+                                control={control}
+
+                            />
+                        </Box>
                     </Box>
                     <Box className={"itemBox"}>
                         <TextField7

@@ -1,5 +1,6 @@
 from pathlib import Path
 import datetime
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,6 +33,8 @@ INSTALLED_APPS = [
     'knox',
     # CORS
     'corsheaders',
+    # Password Reset
+    'django_rest_passwordreset',
     # Third party apps
     'users',
     
@@ -58,7 +61,8 @@ CORS_ALLOWED_ORIGINS = [
 AUTH_USER_MODEL = 'users.CustomUser'
 
 AUTHENTICATION_BACKENDS = [
-    'users.auth_backend.EmailAuthBackend'
+    'users.auth_backend.EmailAuthBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
 ROOT_URLCONF = 'main.urls'
@@ -66,7 +70,7 @@ ROOT_URLCONF = 'main.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/"templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,3 +140,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Email Setting 
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'mail.higna.com.ng'
+EMAIL_PORT = 993
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "Catalog App"
+EMAIL_HOST_USER = os.environ.get("Catalog_Username")
+EMAIL_HOST_PASSWORD = os.environ.get("Catalog_Password")

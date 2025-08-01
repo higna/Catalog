@@ -6,6 +6,7 @@ import Contact from './components/Contact'
 import Map from './components/Map'
 import Signup from './components/Signup'
 import Login from './components/Login'
+import Users from './components/Users'
 import Navbar from './components/Navbar'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoutes'
@@ -28,7 +29,9 @@ export default function App() {
             <Routes>
               <Route element={<ProtectedRoute />}>
                 <Route path='/map' element={<Map />} />
+                <Route path='/users' element={<Users />} />
               </Route>
+              <Route path='/' element={<Home />} />
               <Route path='/home' element={<Home />} />
               <Route path='/about' element={<About />} />
               <Route path='/contact' element={<Contact />} />

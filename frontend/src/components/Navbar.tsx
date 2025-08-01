@@ -16,6 +16,7 @@ import LoginIcon from '@mui/icons-material/Login';
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
+import GroupIcon from '@mui/icons-material/Group';
 import { Link, useLocation } from 'react-router-dom'
 import { Divider } from '@mui/material';
 
@@ -88,9 +89,29 @@ export default function Navbar({ children }: NavbarProps) {
                             </ListItemButton>
                         </ListItem>
                     </List>
+                    <List>
+                        <ListItem key={5} disablePadding>
+                            <ListItemButton component={Link} to="/users" selected={"/users" === path}>
+                                <ListItemIcon>
+                                    <GroupIcon />
+                                </ListItemIcon>
+                                <ListItemText primary={"Inventory System"} />
+                            </ListItemButton>
+                        </ListItem>
+                    </List>
                     <Divider/>
                     <List>
                         <ListItem key={5} disablePadding>
+                            <ListItemButton component={Link} to="/users" selected={"/users" === path}>
+                                <ListItemIcon>
+                                    <GroupIcon />
+                                </ListItemIcon>
+                                <ListItemText primary={"Users"} />
+                            </ListItemButton>
+                        </ListItem>
+                    </List>
+                    <List>
+                        <ListItem key={6} disablePadding>
                             <ListItemButton component={Link} to="/login" selected={"/login" === path}>
                                 <ListItemIcon>
                                     <LoginIcon />
@@ -100,7 +121,7 @@ export default function Navbar({ children }: NavbarProps) {
                         </ListItem>
                     </List>
                     <List>
-                        <ListItem key={6} disablePadding>
+                        <ListItem key={7} disablePadding>
                             <ListItemButton component={Link} to="/signup" selected={"/signup" === path}>
                                 <ListItemIcon>
                                     <HowToRegIcon />

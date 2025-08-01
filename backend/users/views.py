@@ -3,10 +3,13 @@ from rest_framework import viewsets, permissions
 from rest_framework.response import Response
 from .serializers import *
 from .models import *
+from django.views.generic import ListView, FormView
 from django.contrib.auth import get_user_model, authenticate
 from knox.models import AuthToken
+from django.core.mail import send_mail
 
 User = get_user_model()
+
 
 class LoginViewSet(viewsets.ViewSet):
     permission_classes = [permissions.AllowAny]
@@ -50,9 +53,9 @@ class RegisterViewSet(viewsets.ViewSet):
         
         
 class UserViewSet(viewsets.ViewSet):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAdminUser]
     queryset = User.objects.all()
-    serializer_class = RegisterSerializer
+    serializer_class = UserSerializer
     
     def list(self,request):
         queryset = User.objects.all()
