@@ -12,7 +12,7 @@ User = get_user_model()
 
 
 class LoginViewSet(viewsets.ViewSet):
-    permission_classes = [permissions.AllowAny]
+    permission_class = [permissions.AllowAny]
     serializer_class = LoginSerializer
     
     def create(self, request):
@@ -39,7 +39,7 @@ class LoginViewSet(viewsets.ViewSet):
 
 
 class RegisterViewSet(viewsets.ViewSet):
-    permission_classes = [permissions.AllowAny]
+    permission_class = [permissions.AllowAny]
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
     
@@ -57,7 +57,7 @@ class UserViewSet(viewsets.ViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     
-    def list(self,request):
+    def list(self):
         queryset = User.objects.all()
         serializer = self.serializer_class(queryset, many=True)
         return Response(serializer.data)

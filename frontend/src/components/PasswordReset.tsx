@@ -1,5 +1,5 @@
 import '../App.css';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, /* useNavigate */ } from 'react-router-dom'
 import { Box } from '@mui/material';
 import TextField7 from './forms/TextField7';
 import Button7 from './forms/Button7';
@@ -9,8 +9,8 @@ import { useState } from 'react';
 import Message7 from './Message';
 
 
-export default function PasswordResetRequest() {
-    const navigate = useNavigate()
+export default function PasswordReset() {
+    //const navigate = useNavigate()
     const { control, handleSubmit } = useForm()
     const [showMessage, setShowMessage] = useState(false)
     const onSubmit = (data: any) => {
@@ -21,7 +21,6 @@ export default function PasswordResetRequest() {
             .then((response) => {
                 setShowMessage(true)
                 console.log(response)
-                navigate(`/password-reset`)
             })
             .catch((error) => {
                 console.error('Error sending ', error)

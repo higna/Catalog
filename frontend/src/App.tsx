@@ -8,6 +8,7 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import Users from './components/Users'
 import Navbar from './components/Navbar'
+import PasswordReset from './components/PasswordReset'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import ProtectedRoute from './components/ProtectedRoutes'
 import PasswordResetRequest from './components/PasswordResetRequest'
@@ -23,6 +24,7 @@ export default function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/request/password_reset' element={<PasswordResetRequest />} />
+            <Route path='/request/password-reset/:token' element={<PasswordReset />} />
           </Routes>
 
           :

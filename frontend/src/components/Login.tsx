@@ -52,7 +52,7 @@ export default function Login() {
                             type={"submit"}
                         />
                     </Box>
-                    <Box className={"adjacentBox"} sx={{alignItems:'center', justifyItems:'center',marginLeft:'15px', marginTop:'-10px'}}>
+                    <Box className={"adjacentBox"} sx={{ alignItems: 'center', justifyItems: 'center', marginLeft: '15px', marginTop: '-10px' }}>
                         <Box className={"itemBox"}>
                             <Link to={"/home"}>
                                 <Button7
@@ -70,7 +70,7 @@ export default function Login() {
                             </Link>
                         </Box>
                     </Box>
-                    <Box className={"itemBox"} sx={{padding:'10px', marginLeft:'15px', marginTop:'-10px'}}>
+                    <Box className={"itemBox"} sx={{ padding: '10px', marginLeft: '15px', marginTop: '-10px' }}>
                         <Link to={"/request/password_reset"}>
                             <Button7
                                 label={"Password reset"}

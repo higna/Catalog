@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-class CuistomUserManager(BaseUserManager):
+class CustomUserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
             raise ValueError('Email is required')
@@ -35,7 +35,7 @@ class CustomUser(AbstractUser):
     date_of_birth = models.DateField(null=True, blank=True)
     username = None
     
-    objects= CuistomUserManager()
+    objects= CustomUserManager()
     
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -44,8 +44,8 @@ class CustomUser(AbstractUser):
 @receiver(reset_password_token_created)
 def password_reset_token_created(reset_password_token, *args, **kwargs):
     sitelink = "http://localhost:3000/"
-    token = "?token={}".format(reset_password_token.key)
-    full_link = str(sitelink)+str("password-reset")+str(token)
+    token = "{}".format(reset_password_token.key)
+    full_link = str(sitelink)+str("password-reset/")+str(token)
     
     print(full_link)
     print(token)
